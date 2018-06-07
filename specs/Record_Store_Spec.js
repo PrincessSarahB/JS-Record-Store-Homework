@@ -61,4 +61,11 @@ describe('RecordStore', function(){
     assert.strictEqual(recordStore.financialSituation(), 1085.00);
   });
 
+  it('should allow store to view all records of a given genre', function(){
+    recordStore.add(record1);
+    recordStore.add(record2);
+    recordStore.add(record3);
+    assert.deepStrictEqual(recordStore.viewRecordsByGenre("Rock"), [record1, record2]);
+  });
+
 });

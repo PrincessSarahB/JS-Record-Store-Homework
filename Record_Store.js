@@ -39,6 +39,16 @@ RecordStore.prototype.sell = function (record) {
 
   };
 
+  RecordStore.prototype.viewRecordsByGenre = function (genre) {
+    recordsByGenre = [];
+this.inventory.forEach(function(record){
+  if(record.genre === genre){
+    recordsByGenre.push(record);
+  }
+});
+ return recordsByGenre;
+  };
+
 
 
 
