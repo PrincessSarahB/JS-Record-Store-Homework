@@ -2,7 +2,7 @@ var assert = require('assert');
 var RecordCollector = require('../Record_Collector.js');
 var Record = require('../Record.js');
 
-describe('RecordStore', function(){
+describe('RecordCollector', function(){
   var recordCollector;
   var record1;
   var record2;
@@ -14,3 +14,9 @@ describe('RecordStore', function(){
     record2 = new Record("David Bowie","Low", "Rock", 55.00);
     record3 = new Record("Jimmy Eat World", "Futures", "Alternative", 20.00);
   });
+
+  it('should have a name', function(){
+    assert.strictEqual(recordCollector.name, "Bob");
+  });
+
+});
