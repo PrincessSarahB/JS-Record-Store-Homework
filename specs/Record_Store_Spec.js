@@ -13,4 +13,8 @@ describe('RecordStore', function(){
     assert.strictEqual(recordStore.name, "Championship Vinyl");
   });
 
+  it('should have a place', function(){
+    assert.strictEqual(recordStore.place, "Glasgow");
+  });
+
 });

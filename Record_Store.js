@@ -1,5 +1,6 @@
-var RecordStore = function(name){
+var RecordStore = function(name, place){
   this.name = name;
+  this.place = place;
 
 };
 
