@@ -12,7 +12,7 @@ describe('RecordStore', function(){
     recordStore = new RecordStore("Championship Vinyl", "Glasgow", 1000.00)
     record1 = new Record("Stereophonics", "Word Gets Around","Rock", 10.00);
     record2 = new Record("David Bowie","Low", "Rock", 55.00);
-    record3 = new Record("Jimmy Eat World", "Futures",  20.00);
+    record3 = new Record("Jimmy Eat World", "Futures", "Alternative", 20.00);
   });
 
   it('should have a name', function(){
@@ -52,6 +52,13 @@ describe('RecordStore', function(){
     assert.strictEqual(recordStore.balance, 1010.00);
     assert.deepStrictEqual(recordStore.inventory.length, 2);
 
+  });
+
+  it('should report financial situation of store', function(){
+    recordStore.add(record1);
+    recordStore.add(record2);
+    recordStore.add(record3);
+    assert.strictEqual(recordStore.financialSituation(), 1085.00);
   });
 
 });

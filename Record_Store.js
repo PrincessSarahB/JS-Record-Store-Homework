@@ -30,6 +30,15 @@ RecordStore.prototype.sell = function (record) {
     } this.balance += record.price;
   };
 
+  RecordStore.prototype.financialSituation = function () {
+    let total = 0;
+  this.inventory.forEach(function(record){
+    total += record.price;
+  });
+  return total += this.balance;
+
+  };
+
 
 
 
