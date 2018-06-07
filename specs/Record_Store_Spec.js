@@ -6,7 +6,7 @@ describe('RecordStore', function(){
   var recordStore;
 
   beforeEach(function(){
-    recordStore = new RecordStore("Championship Vinyl", "Glasgow")
+    recordStore = new RecordStore("Championship Vinyl", "Glasgow", 1000.00)
   });
 
   it('should have a name', function(){
@@ -19,6 +19,10 @@ describe('RecordStore', function(){
 
   it('should have an inventory that starts empty', function(){
     assert.deepStrictEqual(recordStore.inventory.length, 0);
+  });
+
+  it('should have a balance', function(){
+    assert.strictEqual(recordStore.balance, 1000.00);
   });
 
 });
