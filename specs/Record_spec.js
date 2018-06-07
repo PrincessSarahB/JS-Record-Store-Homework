@@ -12,5 +12,7 @@ describe('Record', function(){
     assert.strictEqual(record.artist, "Stereophonics");
   });
 
-  
+  it('should have a title', function(){
+    assert.strictEqual(record.title, "Word Gets Around");
+  });
 })
