@@ -17,4 +17,8 @@ describe('RecordStore', function(){
     assert.strictEqual(recordStore.place, "Glasgow");
   });
 
+  it('should have an inventory that starts empty', function(){
+    assert.deepStrictEqual(recordStore.inventory.length, 0);
+  });
+
 });
