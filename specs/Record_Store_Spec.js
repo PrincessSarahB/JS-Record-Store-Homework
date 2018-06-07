@@ -44,4 +44,14 @@ describe('RecordStore', function(){
     assert.deepStrictEqual(recordStore.listInventory(), ['Title: Word Gets Around, Artist: Stereophonics, Genre: Rock, Price: £10.00', 'Title: Low, Artist: David Bowie, Genre: Rock, Price: £55.00']);
   });
 
+  it('should sell a record and adjust store balance', function(){
+    recordStore.add(record1);
+    recordStore.add(record2);
+    recordStore.add(record3);
+    recordStore.sell(record1);
+    assert.strictEqual(recordStore.balance, 1010.00);
+    assert.deepStrictEqual(recordStore.inventory.length, 2);
+
+  });
+
 });
