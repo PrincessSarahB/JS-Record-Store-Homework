@@ -6,7 +6,7 @@ var Record = function(artist, title, genre, price){
 }
 
 Record.prototype.toString = function() {
-  var result = 'The album ' + this.title + ' is a ' + this.genre + ' album by ' + this.artist + ' and costs £' + this.price.toFixed(2);
+  var result = 'Title: ' + this.title + ', Artist: ' + this.artist + ', Genre: ' + this.genre + ', Price: £' + this.price.toFixed(2);
   return result;
 };
 

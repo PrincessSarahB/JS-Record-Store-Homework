@@ -25,6 +25,6 @@ describe('Record', function(){
   });
 
   it('should print the record properties as a string', function(){
-    assert.strictEqual(record.toString(), 'The album Word Gets Around is a Rock album by Stereophonics and costs £10.00');
+    assert.strictEqual(record.toString(), 'Title: Word Gets Around, Artist: Stereophonics, Genre: Rock, Price: £10.00');
   });
 })

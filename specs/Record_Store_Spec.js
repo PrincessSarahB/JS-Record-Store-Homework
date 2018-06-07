@@ -4,9 +4,15 @@ var Record = require('../Record.js');
 
 describe('RecordStore', function(){
   var recordStore;
+  var record1;
+  var record2;
+  var record3;
 
   beforeEach(function(){
     recordStore = new RecordStore("Championship Vinyl", "Glasgow", 1000.00)
+    record1 = new Record("Stereophonics", "Word Gets Around","Rock", 10.00);
+    record2 = new Record("David Bowie","Low", "Rock", 55.00);
+    record3 = new Record("Jimmy Eat World", "Futures",  20.00);
   });
 
   it('should have a name', function(){
@@ -26,13 +32,16 @@ describe('RecordStore', function(){
   });
 
   it('should have some records in the store inventory', function(){
-    record1 = new Record("Stereophonics", "Word Gets Around","Rock", 10.00);
-    record2 = new Record("Low", "David Bowie", "Rock", 55.00);
-    record3 = new Record("Futures", "Jimmy Eat World", 20.00);
     recordStore.add(record1);
     recordStore.add(record2);
     recordStore.add(record3);
     assert.deepStrictEqual(recordStore.inventory.length, 3);
+  });
+
+  it('should list the inventory', function(){
+    recordStore.add(record1);
+    recordStore.add(record2);
+    assert.deepStrictEqual(recordStore.listInventory(), ['Title: Word Gets Around, Artist: Stereophonics, Genre: Rock, Price: £10.00', 'Title: Low, Artist: David Bowie, Genre: Rock, Price: £55.00']);
   });
 
 });
