@@ -15,4 +15,8 @@ describe('Record', function(){
   it('should have a title', function(){
     assert.strictEqual(record.title, "Word Gets Around");
   });
+
+  it('should have a genre', function(){
+    assert.strictEqual(record.genre, "Rock");
+  });
 })
