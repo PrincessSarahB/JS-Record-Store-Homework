@@ -19,4 +19,8 @@ describe('RecordCollector', function(){
     assert.strictEqual(recordCollector.name, "Bob");
   });
 
+  it('should have cash', function(){
+    assert.strictEqual(recordCollector.cash, 50.00);
+  });
+
 });
