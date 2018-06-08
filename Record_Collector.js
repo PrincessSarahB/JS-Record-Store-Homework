@@ -17,6 +17,14 @@ RecordCollector.prototype.buy = function (record) {
   } this.cash += record.price;
     };
 
+    RecordCollector.prototype.valueOfCollection = function () {
+      let total = 0;
+    this.records.forEach(function(record){
+      total += record.price;
+    });
+    return total;
+
+    };
 
 };
 

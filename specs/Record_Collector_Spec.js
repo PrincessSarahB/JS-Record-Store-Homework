@@ -47,4 +47,10 @@ describe('RecordCollector', function(){
     assert.deepStrictEqual(recordCollector.cash, 30.00);
   });
 
+  it('should be able to view total value of collection', function(){
+    recordCollector.buy(record1);
+    recordCollector.buy(record3);
+    assert.deepStrictEqual(recordCollector.valueOfCollection(), 30.00);
+  });
+
 });
