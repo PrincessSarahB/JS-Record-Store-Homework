@@ -83,5 +83,14 @@ describe('RecordCollector', function(){
     assert.deepStrictEqual(recordCollector.sortRecordsByValueAscending(), [record1, record4, record3]);
   });
 
+  it('should be able to compare the value of collection with another record collector', function(){
+    recordCollector2 = new RecordCollector("Sarah", 200.00);
+    recordCollector.buy(record1);
+    recordCollector.buy(record4);
+    recordCollector2.buy(record2);
+    recordCollector2.buy(record3);
+    assert.deepStrictEqual(recordCollector.compareValueOfCollections(recordCollector, recordCollector2), "Sarah has the most valuable collection worth 75.00");
+  });
+
 
 });

@@ -54,6 +54,14 @@ RecordCollector.prototype.viewMostValuableRecord = function () {
   return this.sortRecordsByValueDescending()[0];
 };
 
+RecordCollector.prototype.compareValueOfCollections = function (recordCollector1, recordCollector2) {
+  if(recordCollector1.valueOfCollection() > recordCollector2.valueOfCollection()){
+    return recordCollector1.name + " has the most valuable collection worth " + recordCollector1.valueOfCollection().toFixed(2);
+  }
+  else {
+    return recordCollector2.name + " has the most valuable collection worth " + recordCollector2.valueOfCollection().toFixed(2);;
+  }
+};
 
 
 
