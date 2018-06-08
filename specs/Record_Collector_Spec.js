@@ -23,4 +23,8 @@ describe('RecordCollector', function(){
     assert.strictEqual(recordCollector.cash, 50.00);
   });
 
+  it('should have collection of records, starts empty', function(){
+    assert.deepStrictEqual(recordCollector.records.length, 0);
+  });
+
 });
