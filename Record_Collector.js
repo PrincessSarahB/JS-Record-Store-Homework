@@ -44,6 +44,12 @@ RecordCollector.prototype.buy = function (record) {
       });
     };
 
+    RecordCollector.prototype.sortRecordsByValueAscending = function(){
+    return  this.records.sort(function(record1, record2){
+        return record1.price - record2.price;
+      });
+    };
+
 RecordCollector.prototype.viewMostValuableRecord = function () {
   return this.sortRecordsByValueDescending()[0];
 };

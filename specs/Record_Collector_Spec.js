@@ -76,4 +76,12 @@ describe('RecordCollector', function(){
     assert.deepStrictEqual(recordCollector.sortRecordsByValueDescending(), [record3, record4, record1]);
   });
 
+  it('should be able to sort records by value in ascending order', function(){
+    recordCollector.buy(record1);
+    recordCollector.buy(record3);
+    recordCollector.buy(record4);
+    assert.deepStrictEqual(recordCollector.sortRecordsByValueAscending(), [record1, record4, record3]);
+  });
+
+
 });
