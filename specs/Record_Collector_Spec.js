@@ -32,5 +32,11 @@ describe('RecordCollector', function(){
     assert.deepStrictEqual(recordCollector.records.length, 1);
     assert.deepStrictEqual(recordCollector.cash, 40.00);
   });
+  it('should not be able to buy record if not enough cash', function(){
+    recordCollector.buy(record3);
+    recordCollector.buy(record2);
+    assert.deepStrictEqual(recordCollector.records.length, 1);
+    assert.deepStrictEqual(recordCollector.cash, 30.00);
+  });
 
 });
