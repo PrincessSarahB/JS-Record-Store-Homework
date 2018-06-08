@@ -62,4 +62,11 @@ describe('RecordCollector', function(){
     assert.deepStrictEqual(recordCollector.valueByGenre("Rock"), 25.00);
   });
 
+  it('should be able to view their most valuable record', function(){
+    recordCollector.buy(record1);
+    recordCollector.buy(record3);
+    recordCollector.buy(record4);
+    assert.deepStrictEqual(recordCollector.viewMostValuableRecord(), record3);
+  });
+
 });
