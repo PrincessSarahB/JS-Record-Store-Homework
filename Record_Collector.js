@@ -38,12 +38,17 @@ RecordCollector.prototype.buy = function (record) {
    return total;
     };
 
+    RecordCollector.prototype.sortRecordsByValueDescending = function(){
+    return  this.records.sort(function(record1, record2){
+        return record2.price - record1.price;
+      });
+    };
+
 RecordCollector.prototype.viewMostValuableRecord = function () {
-  this.records.sort(function(record1, record2){
-    return record2.price - record1.price;
-  });
-  return this.records[0];
+  return this.sortRecordsByValueDescending()[0];
 };
+
+
 
 
 
