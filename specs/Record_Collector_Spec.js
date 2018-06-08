@@ -39,4 +39,12 @@ describe('RecordCollector', function(){
     assert.deepStrictEqual(recordCollector.cash, 30.00);
   });
 
+  it('should be able to sell records, cash goes up, collection decreases', function(){
+    recordCollector.buy(record1);
+    recordCollector.buy(record3);
+    recordCollector.sell(record1);
+    assert.deepStrictEqual(recordCollector.records.length, 1);
+    assert.deepStrictEqual(recordCollector.cash, 30.00);
+  });
+
 });
