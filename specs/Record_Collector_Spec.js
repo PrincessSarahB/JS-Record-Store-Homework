@@ -7,12 +7,14 @@ describe('RecordCollector', function(){
   var record1;
   var record2;
   var record3;
+  var record4;
 
   beforeEach(function(){
     recordCollector = new RecordCollector("Bob", 50.00)
     record1 = new Record("Stereophonics", "Word Gets Around","Rock", 10.00);
     record2 = new Record("David Bowie","Low", "Rock", 55.00);
     record3 = new Record("Jimmy Eat World", "Futures", "Alternative", 20.00);
+    record4 = new Record("Foo Fighters", "The Colour and the Shape", "Rock", 15.00);
   });
 
   it('should have a name', function(){
@@ -51,6 +53,13 @@ describe('RecordCollector', function(){
     recordCollector.buy(record1);
     recordCollector.buy(record3);
     assert.deepStrictEqual(recordCollector.valueOfCollection(), 30.00);
+  });
+
+  it('should be able to view value of records of a particular genre', function(){
+    recordCollector.buy(record1);
+    recordCollector.buy(record3);
+    recordCollector.buy(record4);
+    assert.deepStrictEqual(recordCollector.valueByGenre("Rock"), 25.00);
   });
 
 });
